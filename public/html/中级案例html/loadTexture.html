@@ -124,17 +124,18 @@
 
       function loadModel() {
         // 模型地址
-        const url = "../model/fbx/beats耳机/source/beats_highpoly.fbx";
+        // const url = "../model/fbx/beats耳机/source/beats_highpoly.fbx";
+        const url = "../model/fbx/beats耳机/source/beatsWithTexture.fbx";
         const loader = new THREE.FBXLoader();
         loader.load(url, function (loadedModel) {
-          const textureLoader = new THREE.TextureLoader();
-          const textureId = findGetParameter("textureId") || "0";
-          const textureUrl = `../model/fbx/beats耳机/textures/${textureId}.png`;
-          const textureNormal = textureLoader.load(textureUrl);
+          // const textureLoader = new THREE.TextureLoader();
+          // const textureId = findGetParameter("textureId") || "0";
+          // const textureUrl = `../model/fbx/beats耳机/textures/${textureId}.png`;
+          // const textureNormal = textureLoader.load(textureUrl);
           mesh = loadedModel.children[0].clone();
-          mesh.material.map = textureNormal;
-          mesh.material.shininess = 15;
-          console.log(loadedModel.children[0]);
+          // mesh.material.map = textureNormal;
+          // mesh.material.shininess = 15;
+          // console.log(loadedModel.children[0]);
           scene.add(mesh);
         });
       }
